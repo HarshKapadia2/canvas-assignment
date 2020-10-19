@@ -1,12 +1,14 @@
+const canvas1 = document.querySelector("#canvas-1");
+const canvas2 = document.querySelector("#canvas-2");
+const canvas3 = document.querySelector("#canvas-3");
+
+const img = document.querySelector("img");
+
 window.addEventListener
 (
 	"load",
 	() =>
 	{
-		const canvas1 = document.querySelector("#canvas-1");
-		const canvas2 = document.querySelector("#canvas-2");
-		const canvas3 = document.querySelector("#canvas-3");
-
 		const context1 = canvas1.getContext("2d");
 		const context2 = canvas2.getContext("2d");
 		const context3 = canvas3.getContext("2d");
@@ -26,6 +28,7 @@ window.addEventListener
 		context1.stroke();
 
 		// Triangle
+		context1.lineWidth = 5;
 		context1.beginPath();
 		context1.moveTo(170, 10);
 		context1.lineTo(220, 60);
@@ -34,8 +37,18 @@ window.addEventListener
 		context1.stroke();
 
 		// Circle
+		context1.strokeStyle = "red";
 		context1.beginPath();
 		context1.arc(270, 60, 40, 0, 2 * Math.PI);
 		context1.stroke();
+
+
+		// Canvas 2
+		// Resize canvas
+		canvas2.height =  window.innerHeight / 3;
+		canvas2.width =  window.innerWidth / 3;
+
+		// Image
+		context2.drawImage(img, 10, 10);
 	}
 );
