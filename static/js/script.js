@@ -50,5 +50,43 @@ window.addEventListener
 
 		// Image
 		context2.drawImage(img, 10, 10);
+
+
+		// canvas 3
+		// Resize canvas
+		canvas3.height =  window.innerHeight / 2.5;
+		canvas3.width =  window.innerWidth / 2.5;
+
+		// Car
+		// Car body
+		context3.beginPath();
+		context3.lineWidth = "10";
+		context3.strokeStyle = "black";
+		context3.rect(10, 150, 400, 100);
+		context3.stroke();
+
+		// Car tyres
+		context3.beginPath();
+		context3.arc(80, 300, 50, 0, 2 * Math.PI);
+		context3.strokeStyle = "red";
+		context3.stroke();
+
+		context3.beginPath();
+		context3.arc(350, 300, 50, 0, 2 * Math.PI);
+		context3.strokeStyle = "red";
+		context3.stroke();
+
+		// Car roof
+		context3.moveTo(20, 150);
+		context3.lineTo(40, 50);
+		context3.stroke();
+
+		context3.moveTo(40, 50);
+		context3.lineTo(100, 50);
+		context3.stroke();
+
+		context3.moveTo(100, 50);
+		context3.lineTo(150, 150);
+		context3.stroke();
 	}
 );
